@@ -39,9 +39,9 @@
             <li>
                 <a href="#skills">Skills</a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="#contact">Contact</a>
-            </li>
+            </li> -->
         </ul>
     </header>
     <!-- End header -->
@@ -247,7 +247,7 @@
         </div>
     </div>
 	
-    <div id="contact">
+   <!-- <div id="contact">
         <h2>Get in Touch</h2>
         <div id="contact-form">
             <form method="POST" action="https://formspree.io/email@email.com">
@@ -258,7 +258,7 @@
             </form>
         </div>
         <!-- End #contact-form -->
-    </div>
+    </div> -->
     <!-- End #contact -->
 
     <footer>
@@ -266,7 +266,7 @@
             <div class="row">
                 <div class="col-sm-5 copyright">
                     <p>
-                        Copyright &copy; 2023 Kaushik Nandwana
+                        Copyright &copy; <span id="current_year"></span>2023 Kaushik Nandwana
                     </p>
                 </div>
                 <div class="col-sm-2 top">
@@ -277,23 +277,23 @@
                 <div class="col-sm-5 social">
                     <ul>
                         <li>
-                            <a href="https://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                            <a href="https://github.com/KaushikNandwana" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
                         </li>
                         <li>
-                            <a href="https://stackoverflow.com/" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+                            <a href="https://stackoverflow.com/users/8183344/kaushik-nandwana" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
                         </li>
                         <li>
-                            <a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            <a href="https://in.linkedin.com/in/kaushiknandwana" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                         </li>
                         <li>
-                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="https://www.facebook.com/kaushik.nandwana" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         </li>
-                        <li>
+                       <!-- <li>
                             <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                         </li>
                         <li>
                             <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -303,7 +303,12 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>
-	<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+    <script>
+	    document.getElementById("current_year").innerHTML = new Date().getFullYear();
+    </script>
+	
 </body>
 
 </html>
