@@ -74,7 +74,7 @@
                 <div class="col-md-8">
                     <p>
                         Worked on logistics and ERP projects.</br>
-			5 years of work experience in Microsoft Technologies, Working knowledge of software development and maintenance life cycle process through development to execution. </br>
+			<span id="YearOfExperiance"></span> years of work experience in Microsoft Technologies, Working knowledge of software development and maintenance life cycle process through development to execution. </br>
 			Experienced in C#, .Net framework, .Net Core framework, WebForm, WebApi, MVC and N-Tier Layered architectures.</br>
 			Knowledge of object-oriented programming (OOP) concept.</br>
 			Knowledge of MS SQL Server with functions, views, triggers and store procedures, experienced in entity framework and dapper ORM.</br>
@@ -306,6 +306,7 @@
 
     <script>
 	    document.getElementById("current_year").innerHTML = new Date().getFullYear();
+	    document.getElementById("YearOfExperiance").innerHTML = new Number((new Date().getTime() - new Date("11 January 2018").getTime() ) / 31536000000).toFixed(0);
     </script>
 	
 </body>
