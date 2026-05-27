@@ -619,13 +619,13 @@ footer {
     font-weight: 500
 }
 
-#ContactForm {
+#contact-form {
     max-width: 500px;
     margin: 0 auto
 }
 
-#ContactForm input,
-#ContactForm textarea {
+#contact-form input,
+#contact-form textarea {
     display: block;
     width: 100%;
     padding: 10px;
@@ -637,40 +637,40 @@ footer {
     transition: .5s ease all
 }
 
-#ContactForm input::-webkit-input-placeholder,
-#ContactForm textarea::-webkit-input-placeholder {
+#contact-form input::-webkit-input-placeholder,
+#contact-form textarea::-webkit-input-placeholder {
     color: #fff
 }
 
-#ContactForm input:-moz-placeholder,
-#ContactForm textarea:-moz-placeholder {
+#contact-form input:-moz-placeholder,
+#contact-form textarea:-moz-placeholder {
     color: #fff;
     opacity: 1
 }
 
-#ContactForm input::-moz-placeholder,
-#ContactForm textarea::-moz-placeholder {
+#contact-form input::-moz-placeholder,
+#contact-form textarea::-moz-placeholder {
     color: #fff;
     opacity: 1
 }
 
-#ContactForm input:-ms-input-placeholder,
-#ContactForm textarea:-ms-input-placeholder {
+#contact-form input:-ms-input-placeholder,
+#contact-form textarea:-ms-input-placeholder {
     color: #fff
 }
 
-#ContactForm input:focus,
-#ContactForm textarea:focus {
+#contact-form input:focus,
+#contact-form textarea:focus {
     outline: none;
     background: #16527a
 }
 
-#ContactForm textarea {
+#contact-form textarea {
     height: 150px;
     resize: none
 }
 
-#ContactForm button {
+#contact-form button {
     display: block;
     width: 100%;
     background: #fff;
@@ -683,7 +683,7 @@ footer {
     transition: .5s ease all
 }
 
-#ContactForm button:hover {
+#contact-form button:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)
 }
 
