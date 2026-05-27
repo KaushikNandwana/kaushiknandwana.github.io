@@ -880,8 +880,8 @@ footer {
     width: 100%;
     max-width: 500px;
     margin: auto;
-    background: #1f1f1f;
-    border-radius: 12px;
+    background: #f1eded;
+    border-radius: 0px;
     padding: 15px;
 }
 
