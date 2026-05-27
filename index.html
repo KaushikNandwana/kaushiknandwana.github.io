@@ -303,6 +303,24 @@
     </div>
     <!-- End #contact -->
 
+    <div id="ai-chat-container">
+
+        <div id="chat-messages"></div>
+
+        <div class="chat-input-area">
+            <input 
+                type="text" 
+                id="chat-input"
+                placeholder="Ask about Kaushik..."
+            >
+
+            <button onclick="sendMessage()">
+                Send
+            </button>
+        </div>
+
+    </div>
+
     <footer>
         <div class="container">
             <div class="row">
@@ -368,6 +386,50 @@
             alert("Message sent successfully!");
             this.reset();
         });
+
+        async function sendMessage() {
+
+            const input = document.getElementById("chat-input");
+            const message = input.value.trim();
+            if(!message) return;
+
+            addMessage(message, "user");
+            input.value = "";
+            try {
+                const response = await fetch(
+                    "https://dark-hat-043b.kaushiknandwana.workers.dev/ai-chat",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            question: message
+                        })
+                    }
+                );
+                const data = await response.json();
+                addMessage(data.reply, "bot");
+            }
+            catch(error){
+                addMessage(
+                    "Something went wrong.",
+                    "bot"
+                );
+            }
+        }
+
+        function addMessage(text, type){
+            const chatMessages =
+                document.getElementById("chat-messages");
+            const div = document.createElement("div");
+            div.className = `message ${type}`;
+            div.innerText = text;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop =
+                chatMessages.scrollHeight;
+        }
+
         document.getElementById("current_year").innerHTML = new Date().getFullYear();
         document.getElementById("YearOfExperiance").innerHTML = new Number((new Date().getTime() - new Date("11 January 2018").getTime()) / 31536000000).toFixed(0);
     </script>
