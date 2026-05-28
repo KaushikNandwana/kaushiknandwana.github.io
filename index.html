@@ -318,7 +318,21 @@
                 Send
             </button>
         </div>
+        <div class="suggestions">
 
+        <button onclick="quickAsk('What technologies does Kaushik know?')">
+        💻 Skills
+        </button>
+
+        <button onclick="quickAsk('Explain Kaushik ERP experience')">
+        🏢 ERP
+        </button>
+
+        <button onclick="quickAsk('Explain the sequencer project')">
+        ⚙️ Sequencer
+        </button>
+
+        </div>
     </div>
 
     <footer>
@@ -415,8 +429,8 @@
             input.value = "";
 
             // Create thinking message
-            const thinkingDiv =
-                addMessage("⏳ Thinking...", "bot");
+            thinkingDiv;
+            
             input.disabled = true;
             try {
 
@@ -437,6 +451,7 @@
                 const data = await response.json();
 
                 // Remove thinking message
+                clearInterval(interval);
                 thinkingDiv.remove();
 
                 addMessage(
@@ -446,6 +461,7 @@
             }
             catch(error){
 
+                clearInterval(interval);
                 thinkingDiv.remove();
 
                 addMessage(
@@ -471,6 +487,20 @@
             return div;
         }
         
+        const thinkingDiv =
+            addMessage("⏳ Thinking", "bot");
+
+        let dots = 0;
+
+        const interval = setInterval(() => {
+
+            dots = (dots + 1) % 4;
+
+            thinkingDiv.innerHTML =
+                "⏳ Thinking" + ".".repeat(dots);
+
+        }, 500);
+
         document.getElementById("current_year").innerHTML = new Date().getFullYear();
         document.getElementById("YearOfExperiance").innerHTML = new Number((new Date().getTime() - new Date("11 January 2018").getTime()) / 31536000000).toFixed(0);
     </script>

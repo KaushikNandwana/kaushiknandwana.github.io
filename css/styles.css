@@ -925,4 +925,34 @@ button{
     margin: 0;
 }
 
+.message{
+    padding: 12px 14px;
+    border-radius: 12px;
+    margin: 10px 0;
+    max-width: 85%;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
 
+.user{
+    background: #2563eb;
+    color: white;
+    margin-left: auto;
+}
+
+.bot{
+    background: #2d2d2d;
+    color: #fff;
+    margin-right: auto;
+}
+
+pre{
+    background: #111;
+    padding: 12px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+code{
+    font-family: Consolas, monospace;
+}
