@@ -429,8 +429,17 @@
             input.value = "";
 
             // Create thinking message
-            const thinkingDiv =
-                addMessage("⏳ Thinking", "bot");
+            const thinkingDiv = addMessage("⏳ Thinking", "bot");
+            
+            let dots = 0;
+            const interval = setInterval(() => {
+
+                dots = (dots + 1) % 4;
+
+                thinkingDiv.innerHTML =
+                    "⏳ Thinking" + ".".repeat(dots);
+
+            }, 500);
             
             input.disabled = true;
             try {
@@ -487,16 +496,6 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
             return div;
         }
-
-        let dots = 0;
-        const interval = setInterval(() => {
-
-            dots = (dots + 1) % 4;
-
-            thinkingDiv.innerHTML =
-                "⏳ Thinking" + ".".repeat(dots);
-
-        }, 500);
 
         function quickAsk(question){
 
