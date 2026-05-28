@@ -303,37 +303,59 @@
     </div>
     <!-- End #contact -->
 
+    <!-- AI chat box - Start -->
+
+    <!-- Floating Chat Button -->
+    <div id="chat-toggle" onclick="toggleChat()">
+        🤖
+    </div>
+
+    <!-- Chat Window -->
     <div id="ai-chat-container">
+
+        <div id="chat-header">
+            <span>Kaushik AI Assistant</span>
+
+            <button onclick="toggleChat()">
+                ✖
+            </button>
+        </div>
 
         <div id="chat-messages"></div>
 
+        <div class="suggestions">
+
+            <button onclick="quickAsk('What technologies does Kaushik know?')">
+                💻 Skills
+            </button>
+
+            <button onclick="quickAsk('Explain Kaushik ERP experience')">
+                🏢 ERP
+            </button>
+
+            <button onclick="quickAsk('Explain the sequencer project')">
+                ⚙️ Sequencer
+            </button>
+
+        </div>
+
         <div class="chat-input-area">
-            <input 
-                type="text" 
+
+            <input
+                type="text"
                 id="chat-input"
-                placeholder="Ask about Kaushik..."
+                placeholder="Ask something..."
             >
 
             <button onclick="sendMessage()">
                 Send
             </button>
-        </div>
-        <div class="suggestions">
-
-        <button onclick="quickAsk('What technologies does Kaushik know?')">
-        💻 Skills
-        </button>
-
-        <button onclick="quickAsk('Explain Kaushik ERP experience')">
-        🏢 ERP
-        </button>
-
-        <button onclick="quickAsk('Explain the sequencer project')">
-        ⚙️ Sequencer
-        </button>
 
         </div>
+
     </div>
+
+    <!-- AI chat box - End -->
 
     <footer>
         <div class="container">
@@ -402,6 +424,21 @@
             this.reset();
         });
 
+        function toggleChat(){
+
+            const chat =
+                document.getElementById(
+                    "ai-chat-container"
+                );
+
+            if(chat.style.display === "flex"){
+                chat.style.display = "none";
+            }
+            else{
+                chat.style.display = "flex";
+            }
+        }
+
         addMessage(
             "👋 Hi, I'm Kaushik AI Assistant. Ask me about projects, skills, experience, or technologies.",
             "bot"
@@ -440,7 +477,7 @@
                     "⏳ Thinking" + ".".repeat(dots);
 
             }, 500);
-            
+
             input.disabled = true;
             try {
 
