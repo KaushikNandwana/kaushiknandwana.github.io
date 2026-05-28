@@ -523,12 +523,40 @@
         }
 
         function addMessage(text, type){
+
             const chatMessages = document.getElementById("chat-messages");
             const div = document.createElement("div");
             div.className = `message ${type}`;
-            div.innerHTML = DOMPurify.sanitize(
-                                marked.parse(text)
-                            );
+            const renderedHtml =
+                DOMPurify.sanitize(
+                    marked.parse(text)
+                );
+
+            // Create content div
+            const contentDiv = document.createElement("div");
+
+            contentDiv.className = "message-content";
+            contentDiv.innerHTML = renderedHtml;
+            div.appendChild(contentDiv);
+
+            // Trim long messages
+            if(text.length > 400) {
+                contentDiv.classList.add(
+                    "collapsed"
+                );
+                const toggleBtn = document.createElement("button");
+                toggleBtn.className = "expand-btn";
+                toggleBtn.innerText = "Show More";
+                toggleBtn.onclick = () => {
+                    const isCollapsed =
+                        contentDiv.classList.toggle(
+                            "collapsed"
+                        );
+
+                    toggleBtn.innerText = isCollapsed ? "Show More" : "Show Less";
+                };
+                div.appendChild(toggleBtn);
+            }
             chatMessages.appendChild(div);
             chatMessages.scrollTop = chatMessages.scrollHeight;
             return div;

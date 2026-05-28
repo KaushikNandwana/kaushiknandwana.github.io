@@ -1051,3 +1051,51 @@ code{
     font-family: Consolas, monospace;
 }
 
+
+
+/* Trimmed Message */
+
+.message-content{
+    transition: max-height 0.3s ease;
+}
+
+.message-content.collapsed{
+    max-height: 120px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Fade Effect */
+
+.message-content.collapsed::after{
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 50px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(31,31,31,1)
+    );
+}
+
+/* Expand Button */
+
+.expand-btn{
+    margin-top: 8px;
+
+    background: transparent;
+    border: none;
+
+    color: #60a5fa;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
