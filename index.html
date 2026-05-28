@@ -429,7 +429,8 @@
             input.value = "";
 
             // Create thinking message
-            thinkingDiv;
+            const thinkingDiv =
+                addMessage("⏳ Thinking", "bot");
             
             input.disabled = true;
             try {
@@ -486,12 +487,8 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
             return div;
         }
-        
-        const thinkingDiv =
-            addMessage("⏳ Thinking", "bot");
 
         let dots = 0;
-
         const interval = setInterval(() => {
 
             dots = (dots + 1) % 4;
