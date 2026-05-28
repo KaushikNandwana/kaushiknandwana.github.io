@@ -387,6 +387,21 @@
             this.reset();
         });
 
+        addMessage(
+            "👋 Hi, I'm Kaushik AI Assistant. Ask me about projects, skills, experience, or technologies.",
+            "bot"
+        );
+
+        document.getElementById("chat-input")
+            .addEventListener("keypress", function(e){
+
+                if(e.key === "Enter"){
+                    sendMessage();
+                }
+            });
+
+        addMessage("⏳ Thinking...", "bot");
+
         async function sendMessage() {
 
             const input = document.getElementById("chat-input");
