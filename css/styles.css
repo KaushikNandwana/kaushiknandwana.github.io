@@ -956,3 +956,24 @@ pre{
 code{
     font-family: Consolas, monospace;
 }
+
+.suggestions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.suggestions button{
+    background: #2d2d2d;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.suggestions button:hover{
+    background: #444;
+}
