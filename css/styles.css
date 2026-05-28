@@ -921,6 +921,8 @@ button{
     cursor: pointer;
 }
 
-
+#ai-chat-container.p {
+    margin: 0;
+}
 
 
