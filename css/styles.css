@@ -958,7 +958,7 @@ footer {
     display: flex;
     padding: 10px;
     gap: 10px;
-    border-top: 1px solid #333;
+    border-top: 1px solid #a984c0;
 }
 
 #chat-input{
@@ -978,7 +978,7 @@ footer {
 }
 
 .suggestions button{
-    background: #2d2d2d;
+    background: #7d59aa;
     border: none;
     color: white;
     padding: 6px 10px;
@@ -1009,6 +1009,11 @@ footer {
     flex-direction: column;
 }
 
+
+#chat-messages p {
+    margin: 0;
+}
+
 .message{
     padding: 12px 14px;
     border-radius: 12px;
@@ -1029,14 +1034,14 @@ footer {
 }
 
 .bot{
-    background: #2d2d2d;
+    background: #5f3dda;
     color: white;
 
     align-self: flex-start;
 }
 
 pre{
-    background: #111;
+    background: #a8a9e2;
     padding: 12px;
     border-radius: 8px;
     overflow-x: auto;
